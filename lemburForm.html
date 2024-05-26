@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slip Gaji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="container mx-auto flex flex-col items-center px-5 md:px-0 py-10 md:py-5 bg-neutral-50"
+  >
+    <h1 class="text-2xl w-full text-center text-blue-800 mb-10 font-bold">
+      Lembur Karyawan
+    </h1>
+
+    <form action="" class="lg:w-1/2">
+      <!-- tanggal & total lembur -->
+      <div class="flex w-full space-x-4 mb-5 justify-between">
+        <!-- Tanggal -->
+        <div class="flex flex-col w-full">
+          <label for="date" class="ml-2 text-sm font-semibold text-neutral-600"
+            >Tanggal</label
+          >
+          <input
+            class="bg-white py-3 px-5 w-full mt-3 shadow-sm text-gray-500 text-sm px-5 rounded-lg"
+            type="date"
+            id="date"
+            name="date"
+          />
+        </div>
+
+        <!-- Total lembur -->
+        <div class="w-full h-full">
+          <p class="ml-2 text-sm font-semibold text-neutral-600">
+            Total lembur
+          </p>
+          <label
+            class="bg-white w-full relative shadow-sm mt-3 text-gray-500 text-sm rounded-lg block w-full p-3 dark:bg-gray-700"
+          >
+            <input
+              class="w-full focus:outline-none"
+              type="number"
+              id="jam"
+              value="1"
+              min="1"
+              max="9"
+            />
+            <span class="absolute left-6">jam</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- alasan lembur -->
+      <div>
+        <label for="alasan" class="ml-2 text-sm font-semibold text-neutral-600"
+          >Alasan Lembur</label
+        >
+        <textarea
+          class="bg-white py-3 px-3 w-full mt-3 shadow-sm text-gray-500 text-sm px-5 rounded-lg"
+          type=""
+          id="alasan"
+          name="alasan"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <!-- upload image lembur -->
+      <div class="flex items-center justify-center w-full mt-5">
+        <label
+          for="foto-lembur"
+          class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+        >
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg
+              class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 16"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+              />
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              <span class="font-semibold">Click to upload</span> or drag and
+              drop
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              SVG, PNG, JPG or GIF (MAX. 10mb)
+            </p>
+          </div>
+          <input id="foto-lembur" name="foto-lembur" type="file" class="hidden" />
+        </label>
+      </div>
+
+      
+      <button type="submit" class="w-full h-max py-4 text-sm font-semibold text-white rounded-lg bg-blue-700 hover:bg-blue-800 mt-5">Upload Data Lembur</button>
+      <button class="w-full h-max py-4 text-sm font-semibold text-neutral-600 hover:text-white rounded-lg bg-neutral-300 hover:bg-neutral-500 mt-2">Kembali</button>
+    </form>
+  </body>
+</html>
