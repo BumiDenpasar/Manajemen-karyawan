@@ -1,11 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slip Gaji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+            }
+
+            .noprint {
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
-<body class="w-screen h-screen">
-    
+
+<body class="w-screen h-min-screen h-max p-10 text-sm font-semibold">
+    <img src="./images/nap.png" class="h-16" alt="">
+    <div class="w-full">
+        <h1 class="uppercase font-extrabold text-2xl underline w-full text-center mt-5 ">Slip Gaji</h1>
+
+        <!-- Periode gaji dan noted -->
+        <div class="flex justify-end space-x-5 w-full mt-5">
+            <!-- periode gaji -->
+            <div>
+                <label for="periode-gaji">Periode Gaji:</label>
+                <input type="text" id="periode-gaji" name="periode-gaji" class=" outline-none "
+                    placeholder="_______________">
+            </div>
+
+            <!-- periode gaji -->
+            <div>
+                <!-- noted -->
+                <div>
+                    <label for="noted">NOTED:</label>
+                    <input type="text" id="noted" name="noted" class=" outline-none " placeholder="-">
+                </div>
+                <p>Tunjangan Kesehatan jika sudah 1 tahun</p>
+                <!-- masuk -->
+                <div>
+                    <label for="masuk">Masuk:</label>
+                    <input type="text" id="masuk" name="masuk" class=" outline-none " placeholder="-">
+                </div>
+            </div>
+        </div>
+
+        <!-- info karyawan -->
+        <div class="flex flex-col justify-start w-full">
+            <!-- Nama Karyawan -->
+            <div class="w-full flex items-center justify-between">
+                <label for="nama-karyawan">Nama Karyawan</label>
+                <div class="w-[90%]">
+                    <span>:</span>
+                    <input type="text" id="nama-karyawan" name="nama-karyawan" class=" outline-none w-5/6"
+                        placeholder="______________________________">
+                </div>
+            </div>
+
+            <!-- nomor induk -->
+            <div class="w-full flex items-center justify-between">
+                <label for="nama-karyawan">No.Induk Karyawan</label>
+                <div class="w-[90%]">
+                    <span>:</span>
+                    <input type="text" id="noinduk-karyawan" name="noinduk-karyawan" class=" outline-none w-5/6"
+                        placeholder="______________________________">
+                </div>
+            </div>
+
+            <!-- jabatan -->
+            <div class="w-full flex items-center justify-between">
+                <label for="jabatan">Jabatan</label>
+                <div class="w-[90%]">
+                    <span>:</span>
+                    <input type="text" id="jabatan" name="jabatan" class=" outline-none w-5/6"
+                        placeholder="______________________________">
+                </div>
+            </div>
+
+            <!-- masa kerja -->
+            <div class="w-full flex items-center justify-between">
+                <label for="masa-kerja">Masa Kerja</label>
+                <div class="w-[90%]">
+                    <span>:</span>
+                    <input type="text" id="masa-kerja" name="masa-kerja" class=" outline-none w-5/6"
+                        placeholder="______________________________">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <!-- penghasilan dan potongan-->
+        <div class="w-full flex mt-5">
+            <!-- penghasilan-->
+            <div class="flex flex-col justify-start w-1/2">
+                <h5 class="underline font-bold tracking-wider">A. Penghasilan :</h5>
+                <!-- Nama Karyawan -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="gaji-pokok">1. &nbsp Gaji Pokok</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="gaji-pokok" name="gaji-pokok" class=" outline-none w-5/6"
+                            placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan Jabatan-->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-jabatan">2. &nbsp Tunjangan jabatan</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-jabatan" name="tunjangan-jabatan" class=" outline-none w-5/6"
+                            placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan Transportasi -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-transportasi">3. &nbsp Tunjangan transportasi</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-transportasi" name="tunjangan-transportasi"
+                            class=" outline-none w-5/6" placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan kehadiran -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-kehadiran">4. &nbsp Tunjangan kehadiran</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-kehadiran" name="tunjangan-kehadiran"
+                            class=" outline-none w-5/6" placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan kesehatan -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-kesehatan">5. &nbsp Tunjangan kesehatan</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-kesehatan" name="tunjangan-kesehatan"
+                            class=" outline-none w-5/6" placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan masa kerja -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-masakerja">5. &nbsp Tunjangan masa kerja</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-masakerja" name="tunjangan-masakerja"
+                            class=" outline-none w-5/6" placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Tunjangan konsumsi -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="tunjangan-konsumsi">5. &nbsp Tunjangan konsumsi</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="tunjangan-konsumsi" name="tunjangan-konsumsi" class=" outline-none w-5/6"
+                            placeholder="____________________">
+                    </div>
+                </div>
+
+                <!-- Lembur -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="lembur">5. &nbsp Lembur 2 jam</label>
+                    <div class="w-[70%]">
+                        <span>= </span>
+                        <input type="text" id="lembar" name="lembur" class=" outline-none w-5/6"
+                            placeholder="____________________">
+                    </div>
+                </div>
+
+                <div class="w-1/2 mt-5 flex justify-end">
+                    <div class="h-[1.5px] bg-black w-32 mr-3"></div>
+                </div>
+
+                <!-- jumlah a -->
+                <div class="w-full flex items-center mt-2 justify-end">
+                    <h5 class="mr-3 font-bold">&nbsp Jumlah A</h5>
+                    <div class="w-[70%] flex">
+                        <span>: &nbsp Rp.</span>
+                        <p class="w-24 outline-none"> </p>
+                        <span>-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- potongan -->
+            <div class="flex flex-col justify-start w-1/2">
+                <h5 class="underline font-bold tracking-wider">B. Potongan :</h5>
+
+                <!-- pph -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="pph">1. &nbsp PPh 21</label>
+                    <div class="w-[70%]">
+                        <span>: &nbsp Rp.</span>
+                        <input type="text" id="pph" name="pph" class="w-24 outline-none"
+                            placeholder="____________________">
+                        <span>-</span>
+                    </div>
+                </div>
+
+                <!-- pinjaman -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="pinjaman">2. &nbsp Pinjaman</label>
+                    <div class="w-[70%]">
+                        <span>: &nbsp Rp.</span>
+                        <input type="text" id="pinjaman" name="pinjaman" class="w-24 outline-none"
+                            placeholder="____________________">
+                        <span>-</span>
+                    </div>
+                </div>
+
+                <!-- kasbon -->
+                <div class="w-full flex items-center justify-between">
+                    <label for="kasbon">3. &nbsp Kasbon</label>
+                    <div class="w-[70%]">
+                        <span>: &nbsp Rp.</span>
+                        <input type="text" id="kasbon" name="kasbon" class="w-24 outline-none"
+                            placeholder="____________________">
+                        <span>-</span>
+                    </div>
+                </div>
+
+                <div class="w-1/2 mt-5 flex justify-end">
+                    <div class="h-[1.5px] bg-black w-32"></div>
+                </div>
+
+                <!-- jumlah b -->
+                <div class="w-full flex items-center mt-2 justify-end">
+                    <h5 class="mr-3 font-bold">&nbsp Jumlah B</h5>
+                    <div class="w-[70%] flex">
+                        <span>: &nbsp Rp.</span>
+                        <p class="w-24 outline-none"> </p>
+                        <span>-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- penerimaan bersih -->
+        <div class="bg-gray-300 w-3/4 mt-10 font-bold flex flex-col items-end">
+            <div class="flex items-center justify-between w-3/4">
+                <h5>Penerimaan bersih (Jumlah A - Jumlah B)</h5>
+                <span>=</span>
+
+                <!-- jumlah bersih -->
+                <div class="w-max flex">
+                    <span>&nbsp Rp.</span>
+                    <p class="w-24 outline-none"> </p>
+                    <span>-</span>
+                </div>
+
+            </div>
+
+            <div class="w-full h-[2px] bg-black"></div>
+
+            <h5 class="w-full text-center italic">Terbilang : Tiga Juta Dua Ratus Enam Puluh Ribu Rupiah</h5>
+        </div>
+
+        <!-- kehadiran -->
+        <div class="flex flex-col justify-start w-1/2 mt-5">
+            <h5 class="underline font-bold tracking-wider">C. Kehadiran :</h5>
+
+            <!-- kehadiran -->
+            <div class="w-full flex items-center justify-between">
+                <label for="kehadiran">1. &nbsp Tanpa Keterangan</label>
+                <div class="w-[70%]">
+                    <span>&nbsp : &nbsp &nbsp</span>
+                    <input type="text" id="kehadiran" name="kehadiran" class="w-4 outline-none" placeholder="-">
+                    <span>Hari</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- rekapitulasi -->
+        <div class="flex flex-col justify-start w-1/2 mt-5">
+            <h5 class="underline font-bold tracking-wider">D. Rekapitulasi Cuti :</h5>
+
+            <!-- cuti -->
+            <div class="w-full flex items-center justify-between">
+                <label for="cuti">1. &nbsp Cuti</label>
+                <div class="w-[70%]">
+                    <span>&nbsp : &nbsp &nbsp</span>
+                    <input type="text" id="cuti" name="cuti" class="w-4 outline-none" placeholder="-">
+                    <span>Hari</span>
+                </div>
+            </div>
+
+            <!-- sisa-cuti -->
+            <div class="w-full flex items-center justify-between">
+                <label for="sisa-cuti">1. &nbsp Sisa Cuti</label>
+                <div class="w-[70%]">
+                    <span>&nbsp : &nbsp &nbsp</span>
+                    <input type="text" id="sisa-cuti" name="sisa-cuti" class="w-4 outline-none" placeholder="-">
+                    <span>Hari</span>
+                </div>
+            </div>
+
+
+            <div>
+
+            </div>
+        </div>
+
+
+        <div class="w-1/2 flex justify-end">
+            <div>
+                <p>Bogor, 30 April 2024</p>
+                <p>General Manager</p>
+
+                <h5 class="font-bold underline mt-24">Rahmat Ismail</h5>
+            </div>
+        </div>
+
+        <div class="fixed right-10 bottom-10 space-y-3 bg-blue-50 shadow-md p-4 pb-5 rounded-lg h-max w-max items-center noprint">
+            <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Edit Data
+            </button>
+
+            <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Simpan
+            </button>
+
+            <button
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Print
+            </button>
+        </div>
 </body>
+
 </html>
